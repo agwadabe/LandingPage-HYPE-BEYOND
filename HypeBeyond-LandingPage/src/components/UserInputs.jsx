@@ -13,7 +13,7 @@ import React from "react";
 
 const UserInputs = () => {
   return (
-    <form className="mt-12 text-left">
+    <form className="mt-12 text-left flex justify-center">
       <div className="w-full max-w-md px-4">
         <h2 className="text-3xl font-bold text-nowrap mb-3">
           BEREIT FÜR DEINEN HYPE?
@@ -112,7 +112,7 @@ const UserInputs = () => {
             rows={3}
           />
         </Field>
-        <Button className="inline-flex items-center  gap-2 rounded-md bg-gray-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-open:bg-gray-700">
+        <Button className="mx-auto mt-4 mb-4 flex w-fit items-center gap-2 rounded-md bg-gray-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-open:bg-gray-700">
           JETZT ANGEBOT ANFORDERN
         </Button>
       </div>
