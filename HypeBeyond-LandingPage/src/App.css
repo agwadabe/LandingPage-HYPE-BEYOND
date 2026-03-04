@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
-@plugin "@headlessui/tailwindcss";
+@plugin "@headlessui/react";
 
 #root {
   width: 100%;
