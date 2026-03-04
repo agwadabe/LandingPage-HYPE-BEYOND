@@ -1,16 +1,9 @@
-import './App.css'
-
-import HeroSection from './components/HeroSection'
-import Footer from './components/Footer'
-import UserRating from './components/UserRating'
-
-import { useState } from "react";
+import "./App.css";
+import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
-import HeroSection from './components/HeroSection'
-import UserRating from './components/UserRating'
 import UserInputs from "./components/UserInputs";
-import Footer from './components/Footer'
-
+import UserRating from "./components/UserRating";
 
 function App() {
   return (
