@@ -9,10 +9,10 @@ const Footer = () => {
         <div>
           <p>E-Mail: info@hypebond.com</p>
           <p>Telefon: +0123/4567899</p>
+          <p>Adresse: Steinstrasse 3</p>
         </div>
 
         <div>
-          <p>Adresse: Steinstrasse 3</p>
           <p>Social-Media-Links</p>
         </div>
       </div>
