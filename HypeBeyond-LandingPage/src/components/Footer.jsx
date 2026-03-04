@@ -1,3 +1,5 @@
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa"
+
 const Footer = () => {
   return (
     <footer className="bg-zinc-700 text-neutral-100">
@@ -13,7 +15,17 @@ const Footer = () => {
         </div>
 
         <div>
-          <p>Social-Media-Links</p>
+          <div className="mt-3 flex gap-3">
+            <a href="https://tiktok.com/@deinname" target="_blank" rel="noreferrer" className="hover:text-pink-300">
+              <FaTiktok size={20} />
+            </a>
+            <a href="https://instagram.com/deinname" target="_blank" rel="noreferrer" className="hover:text-pink-300">
+              <FaInstagram size={20} />
+            </a>
+            <a href="https://facebook.com/deinname" target="_blank" rel="noreferrer" className="hover:text-pink-300">
+              <FaFacebookF size={20} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -21,5 +33,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-
