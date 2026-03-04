@@ -1,13 +1,15 @@
-<<<<<<< HEAD
 import './App.css'
 <<<<<<< HEAD
 =======
 import HeroSection from './components/HeroSection'
 import Footer from './components/Footer'
 import UserRating from './components/UserRating'
+<<<<<<< HEAD
 =======
 >>>>>>> 20f9b6f (Navbar und Inputs angelegt)
 >>>>>>> b1fbfda (Navbar und Inputs angelegt)
+=======
+>>>>>>> e220fdc (t)
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from './components/HeroSection'
