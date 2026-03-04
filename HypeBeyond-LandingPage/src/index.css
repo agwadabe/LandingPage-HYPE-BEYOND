@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&display=swap");
+@plugin "daisyui";
+@plugin "@headlessui/tailwindcss";
 
 :root {
   width: 100%;
