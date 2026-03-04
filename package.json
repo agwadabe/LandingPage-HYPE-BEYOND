@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/agwadabe/LandingPage-HYPE-BEYOND-Gruppe_5/issues"
   },
-  "homepage": "https://github.com/agwadabe/LandingPage-HYPE-BEYOND-Gruppe_5#readme"
+  "homepage": "https://github.com/agwadabe/LandingPage-HYPE-BEYOND-Gruppe_5#readme",
+  "devDependencies": {
+    "daisyui": "^5.5.19"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.9",
+    "@heroicons/react": "^2.2.0"
+  }
 }

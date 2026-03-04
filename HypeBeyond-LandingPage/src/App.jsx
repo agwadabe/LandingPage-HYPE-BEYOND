@@ -10,8 +10,8 @@ function App() {
     <>
       <Navbar />
       <HeroSection />
-      <UserInputs />
       <UserRating />
+      <UserInputs />
       <Footer />
     </>
   );
