@@ -12,6 +12,7 @@ const GRID_WIDTH = 25;
 const GRID_HEIGHT = 20;
 
 const DotGrid = () => {
+    const handle
   const dots = [];
   let index = 0;
 
