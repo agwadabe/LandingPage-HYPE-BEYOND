@@ -8,11 +8,17 @@ import {
 } from "@headlessui/react";
 import clsx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import ScrollAnimation from "./ScrollAnimation.jsx"
+
 
 import React from "react";
 
+
+
+
 const UserInputs = () => {
   return (
+   <ScrollAnimation> 
     <form className="mt-12 text-left flex justify-center">
       <div className="w-full max-w-md px-4">
         <h2 className="text-3xl font-bold text-nowrap mb-3">
@@ -117,6 +123,7 @@ const UserInputs = () => {
         </Button>
       </div>
     </form>
+    </ScrollAnimation>
   );
 };
 
