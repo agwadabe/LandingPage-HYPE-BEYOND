@@ -2,12 +2,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
-<<<<<<< HEAD
-=======
-import HeroSection from './components/HeroSection'
 import HeroEffect from './components/HeroEffect'
-import UserRating from './components/UserRating'
->>>>>>> origin/main
 import UserInputs from "./components/UserInputs";
 import UserRating from "./components/UserRating";
 
