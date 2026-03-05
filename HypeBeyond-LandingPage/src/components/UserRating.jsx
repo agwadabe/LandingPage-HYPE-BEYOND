@@ -1,5 +1,8 @@
+import ScrollAnimation from "./ScrollAnimation.jsx"
+
 const UserRating = () => {
   return (
+    <ScrollAnimation>
     <section className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
       <h2 className="mb-10 text-3xl font-semibold">WAS UNSERE PARTNER SAGEN</h2>
 
@@ -23,6 +26,7 @@ const UserRating = () => {
         </div>
       </div>
     </section>
+    </ScrollAnimation>
   )
 }
 
