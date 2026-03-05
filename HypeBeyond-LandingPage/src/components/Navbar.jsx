@@ -1,5 +1,5 @@
 import React from "react";
-import logoDarkH from "../assets/Hype&Beyond Logo Dark Mode.svg";
+import logoDarkH from "../assets/Hype&Beyond Logo Horizontal Dark Mode.svg";
 
 
 const Navbar = () => {
@@ -45,7 +45,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Hype & Beyond</a>
+        <a className="pl-2 text-xl"><img src={logoDarkH} alt="Hype & Beyond Logo" className="h-5 w-auto" /></a>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
