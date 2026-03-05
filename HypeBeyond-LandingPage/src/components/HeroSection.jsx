@@ -1,4 +1,5 @@
 import logoDark from "../assets/Hype&Beyond Logo Dark Mode.svg";
+import HeroEffect from "./HeroEffect";
 
 const HeroSection = () => {
   return (
