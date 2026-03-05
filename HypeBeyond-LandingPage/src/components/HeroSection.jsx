@@ -50,10 +50,11 @@ function LabelPill() {
 function Headline() {
   return (
     <h1 className={styles.headline}>
-      Marken,{' '}
-      <span className={styles.headlineLight}>die man</span>
-      <br />
-      <span className={styles.headlineAccent}>nicht übersieht.</span>
+      Sei sichtbar{' '}
+            <br />
+      <span className={styles.headlineLight}>vor allen </span>
+
+      <span className={styles.headlineAccent}>anderen.</span>
     </h1>
   );
 }
