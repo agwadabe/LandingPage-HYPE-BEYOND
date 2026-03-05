@@ -5,6 +5,7 @@ const HeroSection = () => {
   return (
     <header>
       <section className="hero-section">
+        <HeroEffect />
         <div className="hero-content">
           <h1>Welcome to</h1>
           <img className="hero-logo" src={logoDark} alt="Hype & Beyond Logo" />

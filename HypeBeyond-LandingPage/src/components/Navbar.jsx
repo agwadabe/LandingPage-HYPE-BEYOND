@@ -1,4 +1,6 @@
 import React from "react";
+import logoDarkH from "../assets/Hype&Beyond Logo Dark Mode.svg";
+
 
 const Navbar = () => {
   return (
