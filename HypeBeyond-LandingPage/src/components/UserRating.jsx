@@ -1,25 +1,25 @@
 const UserRating = () => {
   return (
-    <section className="py-16 text-center">
+    <section className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
       <h2 className="mb-10 text-3xl font-semibold">WAS UNSERE PARTNER SAGEN</h2>
 
-      <div className="flex justify-center gap-12">
-        <div>
-          <p className="text-xl text-yellow-400">★★★★★</p>
-          <p className="mt-2">Sehr gute Zusammenarbeit und starke Ergebnisse.</p>
-          <p className="mt-3 font-semibold">AciloCompany</p>
+      <div className="grid gap-6 md:grid-cols-3">
+        <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-left">
+          <p className="text-lg text-yellow-400">★★★★★</p>
+          <p className="mt-3 text-sm text-neutral-200">Sehr gute Zusammenarbeit und starke Ergebnisse.</p>
+          <p className="mt-4 text-sm font-semibold text-white">AciloCompany</p>
         </div>
 
-        <div>
-          <p className="text-xl text-yellow-400">★★★★★</p>
-          <p className="mt-2">Professionell, schnell und zuverlässig.</p>
-          <p className="mt-3 font-semibold">SoysalGmbh</p>
+        <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-left">
+          <p className="text-lg text-yellow-400">★★★★★</p>
+          <p className="mt-3 text-sm text-neutral-200">Professionell, schnell und zuverlässig.</p>
+          <p className="mt-4 text-sm font-semibold text-white">SoysalGmbh</p>
         </div>
 
-        <div>
-          <p className="text-xl text-yellow-400">★★★★★</p>
-          <p className="mt-2">Unsere Projekte laufen jetzt deutlich effizienter.</p>
-          <p className="mt-3 font-semibold">AbdulFirma</p>
+        <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-left">
+          <p className="text-lg text-yellow-400">★★★★★</p>
+          <p className="mt-3 text-sm text-neutral-200">Unsere Projekte laufen jetzt deutlich effizienter.</p>
+          <p className="mt-4 text-sm font-semibold text-white">AbdulFirma</p>
         </div>
       </div>
     </section>
