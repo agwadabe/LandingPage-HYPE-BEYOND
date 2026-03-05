@@ -4,14 +4,14 @@
 @plugin "@headlessui/tailwindcss";
 
 @theme {
-    --color-primary-1: "#1873aa";
-    --color-primary-2: "#4126b2";
-    --color-secondary-1: "#1b537b";
-    --color-secondary-2: "#2d1e5d";
-    --color-accent: "#2d96a1";
-    --color-neutral-light: "#e9e1ff";
-    --color-neutral-base: "#faf8ff";
-    --color-dark: "#130d28";
+    --color-primary-1: #1873aa;
+    --color-primary-2: #4126b2;
+    --color-secondary-1: #1b537b;
+    --color-secondary-2: #2d1e5d;
+    --color-brand-accent: #0dcfe4;
+    --color-neutral-light: #e9e1ff;
+    --color-neutral-base: #faf8ff;
+    --color-dark: #130d28;
   }
 
 :root {
@@ -28,7 +28,7 @@
   --primary-2: #4126b2;
   --secondary-1: #1b537b;
   --secondary-2: #2d1e5d;
-  --accent: #2d96a1;
+  --accent: #0dcfe4;
   --dark: #130d28;
   --neutral-light: #e9e1ff;
   --neutral-base: #faf8ff;
@@ -44,11 +44,16 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--neutral-light);
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+  color: var(--primary-2);
+}
+
+a:pressed {
+  color: var(--secondary-2);
 }
 
 html,

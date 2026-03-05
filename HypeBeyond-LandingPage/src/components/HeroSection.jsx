@@ -3,6 +3,7 @@
 import React from "react";
 
 import styles from './HeroSection.module.css';
+import logoDarkVertical from "../assets/Hype&Beyond Logo Dark Mode.svg";
 
 // ── Sub-components ────────────────────────────────────────────────
 
@@ -54,16 +55,6 @@ function Headline() {
       <br />
       <span className={styles.headlineAccent}>nicht übersieht.</span>
     </h1>
-  );
-}
-
-function Subline() {
-  return (
-    <p className={styles.subline}>
-      Wir bauen Markenerlebnisse, die <strong>bleiben</strong>. Von Brand
-      Strategy über Kampagnen bis zum viralen Social Content –{' '}
-      <strong>HYPE &amp; BEYOND</strong> spielt in der ersten Liga.
-    </p>
   );
 }
 
@@ -144,9 +135,9 @@ export default function HeroSection() {
       <DecorativeShapes />
       <div className={styles.heroContent}>
         <LabelPill />
-        <Headline />
+        <img src={logoDarkVertical} alt="Hype & Beyond Logo" className={styles.logo} />
         <div className={styles.shimmerLine} />
-        <Subline />
+        <Headline />
         <CtaGroup />
       </div>
 

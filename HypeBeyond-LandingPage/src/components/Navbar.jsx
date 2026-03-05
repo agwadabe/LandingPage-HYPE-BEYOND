@@ -4,7 +4,7 @@ import logoDark from "../assets/Hype&Beyond Logo Horizontal Dark Mode.svg";
 
 const Navbar = () => {
   return (
-    <div className="navbar fixed z-1000 left-0 top-0 w-full  bg-base-900 shadow-sm">
+    <div className="navbar fixed z-50 left-0 top-0 w-full bg-[#130d28] shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
