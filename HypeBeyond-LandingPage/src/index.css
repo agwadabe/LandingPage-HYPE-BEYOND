@@ -3,23 +3,44 @@
 @plugin "daisyui";
 @plugin "@headlessui/tailwindcss";
 
+@theme {
+    --color-primary-1: "#1873aa";
+    --color-primary-2: "#4126b2";
+    --color-secondary-1: "#1b537b";
+    --color-secondary-2: "#2d1e5d";
+    --color-accent: "#2d96a1";
+    --color-neutral-light: "#e9e1ff";
+    --color-neutral-base: "#faf8ff";
+    --color-dark: "#130d28";
+  }
+
 :root {
-  width: 100%;
   margin: 0;
   padding: 0;
   font-family: "Lexend", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: transparent;
+
+  --primary-1: #1873aa;
+  --primary-2: #4126b2;
+  --secondary-1: #1b537b;
+  --secondary-2: #2d1e5d;
+  --accent: #2d96a1;
+  --dark: #130d28;
+  --neutral-light: #e9e1ff;
+  --neutral-base: #faf8ff;
+  --gradient: linear-gradient(135deg, #4126b2 0%, #1873aa 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 a {
   font-weight: 500;
@@ -31,12 +52,12 @@ a:hover {
 }
 
 html,
-body,
-#root {
+body {
   width: 100%;
   min-height: 100vh;
   background-color: transparent;
 }
+
 body {
   margin: 0;
   padding: 0;
