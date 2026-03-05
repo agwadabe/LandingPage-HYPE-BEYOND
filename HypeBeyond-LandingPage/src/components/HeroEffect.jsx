@@ -2,7 +2,7 @@ import { animate } from "animejs";
 
 const WaterDropGrid = () => {
   return (
-    <div className="relative grid h-screen place-content-center bg-slate-900 px-8">
+    <div className="absolute grid h-screen place-content-center">
       <DotGrid />
     </div>
   );
@@ -15,8 +15,8 @@ const DotGrid = () => {
   const dots = [];
   let index = 0;
 
-  for (let i = 0; i < GRID_HEIGHT; i++) {
-    for (let j = 0; j < GRID_WIDTH; j++) {
+  for (let i = 0; i < GRID_WIDTH; i++) {
+    for (let j = 0; j < GRID_HEIGHT; j++) {
       dots.push(
         <div
           className="group cursor-crosshair rounded-full p-2 transition-colors hover:bg-slate-600"
@@ -31,7 +31,11 @@ const DotGrid = () => {
     }
   }
 
-  return <div style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}>{dots}</div>;
+  return (
+  <div style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
+  className="grid w-fit"
+  >{dots}</div>
+  );
 };
 
-export default WaterDropGrid;
+export default WaterDropGrid; 
