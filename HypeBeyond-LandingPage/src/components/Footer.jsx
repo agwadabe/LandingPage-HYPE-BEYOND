@@ -3,8 +3,8 @@ import logoDark from "../assets/Hype&Beyond Logo Horizontal Dark Mode.svg"
 
 const Footer = () => {
   return (
-    <footer className="mt-10 border-t border-white/10 bg-dark text-neutral-200 after:block after:h-2 after:bg-zinc-900 after:content-['']">
-      <div className="mx-auto max-w-6xl px-6 py-5">
+    <footer className="mt-10 bg-dark text-neutral-200 after:block after:bg-zinc-900 after:content-['']">
+      <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="grid gap-4 text-left md:grid-cols-2">
           <div>
             <h3 className="text-sm font-semibold">HYPE & BEYOND</h3>
