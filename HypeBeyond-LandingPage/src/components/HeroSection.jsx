@@ -52,9 +52,11 @@ function Headline() {
     <h1 className={styles.headline}>
       Sei sichtbar{' '}
             <br />
+      <div className={styles.headlineDiv}>
       <span className={styles.headlineLight}>vor allen </span>
 
       <span className={styles.headlineAccent}>anderen.</span>
+      </div>
     </h1>
   );
 }

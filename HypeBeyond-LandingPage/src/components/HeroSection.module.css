@@ -58,7 +58,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--dark);
   padding: 0 clamp(24px, 6vw, 80px);
 }
 
@@ -236,74 +235,13 @@
   animation: floatC 4s ease-in-out infinite;
 }
 
-/* ── Navigation ── */
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: clamp(20px, 3vw, 36px) clamp(24px, 6vw, 80px);
-  z-index: 10;
-  animation: fadeIn 0.8s ease both;
-}
-
-.navLogo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.navLogoMark {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: var(--gradient);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Lexend", sans-serif;
-  font-weight: 800;
-  font-size: 13px;
-  color: var(--neutral-base);
-  letter-spacing: -0.5px;
-  box-shadow: 0 0 24px rgba(65, 38, 178, 0.4);
-  flex-shrink: 0;
-}
-
-.navLogoText {
-  font-family: "Lexend", sans-serif;
-  font-weight: 600;
-  font-size: clamp(13px, 1.8vw, 15px);
-  color: var(--neutral-light);
-  letter-spacing: 0.04em;
-  opacity: 0.9;
-}
-
-.navLogoText span {
-  color: var(--neutral-base);
-}
-
-.navBadge {
-  font-family: "Lexend", sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  font-style: italic;
-  color: rgba(233, 225, 255, 0.4);
-  letter-spacing: 0.08em;
-  border: 1px solid rgba(233, 225, 255, 0.1);
-  padding: 4px 12px;
-  border-radius: 100px;
-}
-
 /* ── Hero Content ── */
 .heroContent {
   position: relative;
   z-index: 5;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
 }
@@ -317,8 +255,8 @@
   border: 1px solid rgba(65, 38, 178, 0.35);
   border-radius: 100px;
   padding: 6px 16px;
-  margin-bottom: 36px;
-  animation: fadeUp 0.7s ease 0.2s both;
+  margin-bottom: 26px;
+  animation: fadeUp 0.7s ease 1.5s both;
 }
 
 .labelDot {
@@ -341,9 +279,11 @@
 }
 
 .logo {
-  width: min(20vw, 520px);
+  width: min(15vw, 420px);
   height: auto;
   margin-bottom: 24px;
+  animation: fadeUp 0.7s ease 1.7s both;
+
 }
 
 /* Headline */
@@ -360,7 +300,9 @@
 
 .headlineLight {
   font-weight: 300;
-  color: rgba(233, 225, 255, 0.35);
+  opacity: 0.45;
+  color: var(--color-light-neutral);
+  animation: fadeUp 0.3s ease-out 0.5s both;
 }
 
 .headlineAccent {
@@ -369,6 +311,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: fadeUp 0.7s ease 0.8s both;
 }
 
 /* Shimmer divider */
@@ -378,8 +321,9 @@
   width: clamp(60px, 10vw, 120px);
   height: 1px;
   background: rgba(233, 225, 255, 0.1);
-  margin: 12px auto;
-  animation: fadeIn 1s ease 0.7s both;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease 1.7s both;
 }
 
 .shimmerLine::after {
@@ -411,8 +355,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--primary-2);
-  color: var(--neutral-base);
+  background: var(--color-accent);
+  color: var(--color-dark);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -423,6 +367,7 @@
   box-shadow: 0 0 32px rgba(65, 38, 178, 0.45), 0 4px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
+  animation: fadeUp 0.7s ease 1.9s both;
 }
 
 .btnPrimary::before {
@@ -436,6 +381,7 @@
 
 .btnPrimary:hover {
   transform: translateY(-2px) scale(1.02);
+
   box-shadow: 0 0 48px rgba(65, 38, 178, 0.6), 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
@@ -462,7 +408,7 @@
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: rgba(233, 225, 255, 0.55);
+  color: var-(--neutral-light);
   font-family: "Lexend", sans-serif;
   font-size: 13px;
   font-weight: 400;
@@ -473,6 +419,7 @@
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
+  animation: fadeUp 0.7s ease 2s both;
 }
 
 .btnGhost:hover {
@@ -517,9 +464,10 @@
 
 .statLabel {
   font-family: "Lexend", sans-serif;
-  font-size: 11px;
-  font-weight: 300;
-  color: rgba(233, 225, 255, 0.4);
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.5;
+  color: var(--color-accent);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -539,14 +487,15 @@
   font-size: 11px;
   font-weight: 300;
   font-style: italic;
-  color: rgba(233, 225, 255, 0.25);
+  color: var(--neutral-base);
   letter-spacing: 0.08em;
 }
 
 .scrollIcon {
   width: 20px;
   height: 32px;
-  border: 1px solid rgba(233, 225, 255, 0.15);
+  opacity: 0.4;
+  border: 1px solid var(--neutral-base);
   border-radius: 100px;
   display: flex;
   justify-content: center;

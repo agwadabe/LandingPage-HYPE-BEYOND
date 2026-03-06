@@ -1,9 +1,9 @@
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa"
-import logoLight from "../assets/Hype&Beyond Logo Horizontal Light Mode.svg"
+import logoDark from "../assets/Hype&Beyond Logo Horizontal Dark Mode.svg"
 
 const Footer = () => {
   return (
-    <footer className="mt-10 border-t border-white/10 bg-zinc-900 text-neutral-200 after:block after:h-2 after:bg-zinc-900 after:content-['']">
+    <footer className="mt-10 border-t border-white/10 bg-dark text-neutral-200 after:block after:h-2 after:bg-zinc-900 after:content-['']">
       <div className="mx-auto max-w-6xl px-6 py-5">
         <div className="grid gap-4 text-left md:grid-cols-2">
           <div>
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-4 flex flex-col items-start justify-between gap-2 border-t border-white/10 pt-3 text-xs text-neutral-400 md:flex-row md:items-center">
-          <img src={logoLight} alt="Hype and Beyond Logo" className="h-6 w-auto" />
+          <img src={logoDark} alt="Hype and Beyond Logo" className="h-6 w-auto" />
           <p>© {new Date().getFullYear()} Hype & Beyond. Alle Rechte vorbehalten.</p>
         </div>
       </div>
