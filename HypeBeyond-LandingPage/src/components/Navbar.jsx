@@ -1,7 +1,6 @@
 import React from "react";
 import logoDark from "../assets/Hype&Beyond Logo Horizontal Dark Mode.svg";
 
-
 const Navbar = () => {
   return (
     <div className="navbar fixed z-50 left-0 top-0 w-full bg-[#130d28] shadow-sm">
@@ -45,7 +44,9 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="pl-2 text-xl"><img src={logoDark} alt="Hype & Beyond Logo" className="h-5 w-auto" /></a>
+        <a className=" h-5 w-auto text-xl">
+          <img src={logoDark} alt="Hype & Beyond Logo" />
+        </a>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
