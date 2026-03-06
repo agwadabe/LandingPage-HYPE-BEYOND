@@ -2,8 +2,9 @@
 
 import React from "react";
 
-import styles from './HeroSection.module.css';
+import styles from "./HeroSection.module.css";
 import logoDarkVertical from "../assets/Hype&Beyond Logo Dark Mode.svg";
+import CursorGlow from "./CursorGlow";
 
 // ── Sub-components ────────────────────────────────────────────────
 
@@ -37,37 +38,44 @@ function DecorativeShapes() {
   );
 }
 
-
 function LabelPill() {
   return (
     <div className={styles.labelPill}>
       <span className={styles.labelDot} />
-      <span className={styles.labelText}>Wir verwandeln Marken in Kulturen</span>
+      <span className={styles.labelText}>
+        Wir verwandeln Marken in Kulturen
+      </span>
     </div>
   );
 }
 
 function Headline() {
   return (
-    <h1 className={styles.headline}>
-      Sei sichtbar{' '}
-            <br />
+    <>
+      <h1 className={styles.headline}>Sei sichtbar </h1>
       <div className={styles.headlineDiv}>
-      <span className={styles.headlineLight}>vor allen </span>
-
-      <span className={styles.headlineAccent}>anderen.</span>
+        <h2>
+          <span className={styles.headlineLight}>vor allen </span>
+          <span className={styles.headlineAccent}>anderen.</span>
+        </h2>
       </div>
-    </h1>
+    </>
   );
 }
 
 function CtaGroup() {
   return (
     <div className={styles.ctaGroup}>
-      <a href="#kontakt" className={styles.btnPrimary}>
+      <a href="#UserInputs" className={styles.btnPrimary}>
         Kostenloses Erstgespräch sichern
         <span className={styles.btnArrow}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+          >
             <path
               d="M3 8h10M9 4l4 4-4 4"
               stroke="currentColor"
@@ -78,7 +86,7 @@ function CtaGroup() {
           </svg>
         </span>
       </a>
-      <a href="#leistungen" className={styles.btnGhost}>
+      <a href="#ProductExample" className={styles.btnGhost}>
         Unsere Leistungen →
       </a>
     </div>
@@ -87,9 +95,9 @@ function CtaGroup() {
 
 function Stats() {
   const items = [
-    { num: '120+', label: 'Projekte' },
-    { num: '98%',  label: 'Zufriedenheit' },
-    { num: '3× ROI', label: 'Ø Ergebnis' },
+    { num: "120+", label: "Projekte" },
+    { num: "98%", label: "Zufriedenheit" },
+    { num: "3× ROI", label: "Ø Ergebnis" },
   ];
 
   return (
@@ -135,10 +143,15 @@ export default function HeroSection() {
   return (
     <section className={styles.hero} aria-label="Hero">
       <Background />
+      <CursorGlow />
       <DecorativeShapes />
       <div className={styles.heroContent}>
         <LabelPill />
-        <img src={logoDarkVertical} alt="Hype & Beyond Logo" className={styles.logo} />
+        <img
+          src={logoDarkVertical}
+          alt="Hype & Beyond Logo"
+          className={styles.logo}
+        />
         <div className={styles.shimmerLine} />
         <Headline />
         <CtaGroup />

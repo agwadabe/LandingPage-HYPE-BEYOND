@@ -117,9 +117,11 @@ const UserInputs = () => {
                 rows={3}
               />
             </Field>
-            <Button className="mx-auto mt-4 mb-4 flex w-fit items-center gap-2 rounded-md bg-gray-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-open:bg-gray-700">
+            <div className="ctaGroup2">
+            <Button className="btnPrimary2 mx-auto mt-4 mb-4 flex w-fit items-center gap-2 rounded-md bg-gray-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-open:bg-gray-700">
               JETZT ANGEBOT ANFORDERN
             </Button>
+            </div>
           </div>
         </form>
       </section>
