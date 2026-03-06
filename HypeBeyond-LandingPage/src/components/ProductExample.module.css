@@ -1,0 +1,630 @@
+/* ── Keyframes ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmerBar {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+@keyframes floatC {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes pulseOrb {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(1.1); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(400%); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(48px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Section ── */
+.section {
+  position: relative;
+  padding: clamp(80px, 12vw, 140px) clamp(24px, 6vw, 80px);
+  overflow: hidden;
+  background: transparent;
+}
+
+/* ── Background ── */
+.gridLine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(65, 38, 178, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65, 38, 178, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.orbLeft {
+  position: absolute;
+  width: min(500px, 70vw);
+  height: min(500px, 70vw);
+  top: 10%;
+  left: -15%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(65, 38, 178, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  animation: pulseOrb 11s ease-in-out infinite;
+}
+
+.orbRight {
+  position: absolute;
+  width: min(400px, 60vw);
+  height: min(400px, 60vw);
+  bottom: 5%;
+  right: -10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24, 115, 170, 0.13) 0%, transparent 70%);
+  pointer-events: none;
+  animation: pulseOrb 9s ease-in-out infinite 2s;
+}
+
+/* ── Header ── */
+.header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: clamp(48px, 7vw, 80px);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(65, 38, 178, 0.15);
+  border: 1px solid rgba(65, 38, 178, 0.35);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1873aa;
+  box-shadow: 0 0 8px #1873aa;
+  animation: blink 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.pillText {
+  font-family: "Lexend", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-neutral-light);
+}
+
+.title {
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(28px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--neutral-base);
+  margin: 0 0 16px;
+}
+
+.titleAccent {
+  display: inline-block;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(13px, 1.8vw, 16px);
+  font-weight: 300;
+  color: rgba(233, 225, 255, 0.5);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Cards grid ── */
+.grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+/* ── Card ── */
+.card {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid rgba(233, 225, 255, 0.07);
+  background: rgba(19, 13, 40, 0.6);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.22, 0.68, 0, 1.2),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  opacity: 0;
+}
+
+.card.visible {
+  animation: cardReveal 0.7s cubic-bezier(0.22, 0.68, 0, 1.2) both;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: rgba(65, 38, 178, 0.4);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 40px rgba(65, 38, 178, 0.2);
+}
+
+.card:hover .cardGlow {
+  opacity: 1;
+}
+
+.card:hover .mockupScanline {
+  animation-play-state: running;
+}
+
+.card:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* ── Card glow ── */
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Mockup area ── */
+.mockup {
+  position: relative;
+  height: clamp(180px, 22vw, 240px);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(233, 225, 255, 0.05);
+}
+
+.mockupBg {
+  position: absolute;
+  inset: 0;
+}
+
+.mockupScanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+  height: 40%;
+  animation: scanline 3s linear infinite;
+  animation-play-state: paused;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── Social mockup ── */
+.mockupSocialBg {
+  background: linear-gradient(135deg, #0d0820 0%, #1a0f3c 50%, #0d1a2e 100%);
+}
+
+.mockFeed {
+  position: absolute;
+  inset: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mockPost {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.mockPostAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mockPostLines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mockLine {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.mockLineShort  { width: 55%; }
+.mockLineMedium { width: 75%; }
+.mockLineLong   { width: 90%; }
+.mockLineAccent {
+  width: 40%;
+  background: linear-gradient(90deg, #4126b2, #1873aa);
+}
+
+.mockEngagement {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.mockEngItem {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 8px;
+  color: rgba(233, 225, 255, 0.4);
+  font-family: "Lexend", sans-serif;
+}
+
+.mockEngDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+/* ── Brand mockup ── */
+.mockupBrandBg {
+  background: linear-gradient(160deg, #0a0618 0%, #150b30 60%, #0e1828 100%);
+}
+
+.mockBrandCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockLogoFrame {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockLogoRingOuter {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(65, 38, 178, 0.4);
+  animation: spin 8s linear infinite;
+}
+
+.mockLogoRingOuter::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4126b2;
+  box-shadow: 0 0 12px #4126b2;
+}
+
+.mockLogoRingInner {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 115, 170, 0.25);
+  animation: spin 5s linear infinite reverse;
+}
+
+.mockLogoMark {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4126b2, #1873aa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 24px rgba(65, 38, 178, 0.5);
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: white;
+  letter-spacing: -0.05em;
+  z-index: 1;
+}
+
+.mockBrandSwatches {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.mockSwatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mockBrandTypo {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+  opacity: 0.5;
+}
+
+.mockTypoLine {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(233, 225, 255, 0.3);
+}
+
+/* ── Ads mockup ── */
+.mockupAdsBg {
+  background: linear-gradient(150deg, #070514 0%, #0d1525 50%, #0f0d24 100%);
+}
+
+.mockAdsFrame {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(13, 207, 228, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockAdsTopbar {
+  height: 22px;
+  background: rgba(13, 207, 228, 0.06);
+  border-bottom: 1px solid rgba(13, 207, 228, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  gap: 4px;
+}
+
+.mockAdsDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.mockAdsUrl {
+  flex: 1;
+  margin: 0 8px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.mockAdsBody {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mockAdCard {
+  background: rgba(13, 207, 228, 0.05);
+  border: 1px solid rgba(13, 207, 228, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mockAdThumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.mockAdInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mockAdMetric {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  text-align: right;
+  font-family: "Funnel Display", sans-serif;
+}
+
+.mockAdMetricNum {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0dcfe4, #1873aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.mockAdMetricLabel {
+  font-size: 8px;
+  color: rgba(13, 207, 228, 0.5);
+  font-family: "Lexend", sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Card body ── */
+.cardBody {
+  position: relative;
+  z-index: 1;
+  padding: clamp(20px, 2.5vw, 28px);
+}
+
+.cardTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Lexend", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.cardTagDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.cardTitle {
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 700;
+  color: var(--neutral-base);
+  line-height: 1.2;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.cardDesc {
+  font-family: "Lexend", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(233, 225, 255, 0.5);
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.cardFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.cardFeature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Lexend", sans-serif;
+  font-size: 12px;
+  color: rgba(233, 225, 255, 0.6);
+}
+
+.cardFeatureIcon {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 9px;
+}
+
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Lexend", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1px solid;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+.ctaArrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* ── Divider ── */
+.divider {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: clamp(48px, 7vw, 80px);
+}
+
+.dividerLine {
+  flex: 1;
+  max-width: 200px;
+  height: 1px;
+  background: rgba(233, 225, 255, 0.06);
+}
+
+.dividerText {
+  font-family: "Lexend", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(233, 225, 255, 0.25);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

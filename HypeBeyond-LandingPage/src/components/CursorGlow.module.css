@@ -1,0 +1,39 @@
+/* ── Torch layer ──────────────────────────────────────────────────────────
+   Sits directly above .bgGrid (z-index 1), covers the full hero.
+   Its background is updated every rAF frame by the component.
+   pointer-events: none so it never blocks clicks.
+──────────────────────────────────────────────────────────────────────── */
+.torch {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  /* initial state — invisible until first mousemove */
+  background: transparent;
+  /* blend the illumination with the layers below */
+  mix-blend-mode: screen;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Orb layer ────────────────────────────────────────────────────────────
+   A tiny glowing dot that lags ~1-2 frames behind the cursor.
+   Starts at an offscreen position; opacity controlled by JS.
+──────────────────────────────────────────────────────────────────────── */
+.orb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13, 207, 228, 0.9) 0%, rgba(65, 38, 178, 0.4) 60%, transparent 100%);
+  box-shadow:
+    0 0 6px  2px rgba(13, 207, 228, 0.7),
+    0 0 18px 4px rgba(65, 38, 178, 0.4);
+  opacity: 0;
+  /* GPU-composited transform only — no layout thrash */
+  will-change: transform, opacity;
+  transition: opacity 0.25s ease;
+}
