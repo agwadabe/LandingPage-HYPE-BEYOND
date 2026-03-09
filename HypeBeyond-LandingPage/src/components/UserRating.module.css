@@ -1,0 +1,458 @@
+/* ── Keyframes ─────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes starPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ── Section ──────────────────────────────────────────────────────── */
+.section {
+  position: relative;
+  padding: clamp(80px, 12vw, 140px) clamp(24px, 6vw, 80px);
+  overflow: hidden;
+  background: transparent;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Background ───────────────────────────────────────────────────── */
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(65, 38, 178, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65, 38, 178, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+.bgOrb1 {
+  position: absolute;
+  width: min(600px, 80vw);
+  height: min(600px, 80vw);
+  top: -20%;
+  right: -15%;
+  background: radial-gradient(circle, rgba(24, 115, 170, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: glow 8s ease-in-out infinite;
+}
+
+.bgOrb2 {
+  position: absolute;
+  width: min(500px, 70vw);
+  height: min(500px, 70vw);
+  bottom: -10%;
+  left: -20%;
+  background: radial-gradient(circle, rgba(65, 38, 178, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: glow 10s ease-in-out infinite 2s;
+}
+
+.bgNoise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ── Header ───────────────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: clamp(48px, 8vw, 80px);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(24, 115, 170, 0.12);
+  border: 1px solid rgba(24, 115, 170, 0.3);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0dcfe4;
+  box-shadow: 0 0 10px #0dcfe4;
+  animation: starPulse 2s ease-in-out infinite;
+}
+
+.pillText {
+  font-family: "Lexend", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-neutral-light);
+}
+
+.title {
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(32px, 5.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-neutral-base);
+  margin: 0 0 20px;
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+
+.titleAccent {
+  background: linear-gradient(135deg, #0dcfe4 0%, #1873aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(14px, 1.8vw, 17px);
+  font-weight: 300;
+  color: rgba(233, 225, 255, 0.5);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.7;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+
+/* ── Grid ─────────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  margin-bottom: clamp(60px, 8vw, 80px);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto clamp(60px, 8vw, 80px);
+  }
+}
+
+/* ── Card ─────────────────────────────────────────────────────────── */
+.card {
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.cardVisible {
+  animation: fadeUp 0.8s cubic-bezier(0.22, 0.68, 0, 1.2) forwards;
+}
+
+.cardInner {
+  position: relative;
+  background: rgba(19, 13, 40, 0.5);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(233, 225, 255, 0.08);
+  border-radius: 20px;
+  padding: clamp(24px, 3vw, 32px);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.22, 0.68, 0, 1.2);
+}
+
+.card:hover .cardInner {
+  transform: translateY(-8px);
+  border-color: rgba(13, 207, 228, 0.3);
+  box-shadow: 
+    0 32px 64px rgba(0, 0, 0, 0.4),
+    0 0 48px rgba(13, 207, 228, 0.15);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(13, 207, 228, 0.2) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card:hover .cardGlow {
+  opacity: 1;
+}
+
+/* ── Card Content ─────────────────────────────────────────────────── */
+.cardHighlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(13, 207, 228, 0.15), rgba(24, 115, 170, 0.15));
+  border: 1px solid rgba(13, 207, 228, 0.25);
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: 16px;
+  font-family: "Lexend", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #0dcfe4;
+  letter-spacing: 0.05em;
+}
+
+.highlightIcon {
+  font-size: 12px;
+  animation: starPulse 2s ease-in-out infinite;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 18px;
+  color: rgba(233, 225, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.starFilled {
+  color: #febc2e;
+  text-shadow: 0 0 12px rgba(254, 188, 46, 0.5);
+}
+
+.card:hover .starFilled {
+  animation: starPulse 0.6s ease-in-out;
+}
+
+.cardQuote {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.quoteMarkLeft,
+.quoteMarkRight {
+  position: absolute;
+  font-family: "Funnel Display", serif;
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4126b2, #1873aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.15;
+}
+
+.quoteMarkLeft {
+  top: -16px;
+  left: -8px;
+}
+
+.quoteMarkRight {
+  bottom: -32px;
+  right: -8px;
+}
+
+.cardText {
+  position: relative;
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(233, 225, 255, 0.7);
+  margin: 0;
+}
+
+.cardAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(233, 225, 255, 0.06);
+}
+
+.authorAvatar {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(65, 38, 178, 0.2);
+  border: 1px solid rgba(65, 38, 178, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.avatarGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #4126b2, #1873aa);
+  opacity: 0.3;
+}
+
+.avatarInitial {
+  position: relative;
+  font-family: "Lexend", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-neutral-light);
+  z-index: 1;
+}
+
+.authorInfo {
+  flex: 1;
+}
+
+.authorName {
+  font-family: "Lexend", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-neutral-base);
+  margin-bottom: 2px;
+}
+
+.authorDetails {
+  font-family: "Lexend", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(233, 225, 255, 0.4);
+}
+
+.cardCorner {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.cardCorner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 50%, rgba(13, 207, 228, 0.1) 50%);
+  border-top-right-radius: 20px;
+}
+
+.cardCorner::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0dcfe4;
+  box-shadow: 0 0 12px #0dcfe4;
+  opacity: 0.5;
+}
+
+/* ── Trust Badges ─────────────────────────────────────────────────── */
+.badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+  padding-top: clamp(32px, 5vw, 48px);
+  border-top: 1px solid rgba(233, 225, 255, 0.06);
+  animation: fadeUp 0.9s ease 0.6s both;
+}
+
+.badge {
+  text-align: center;
+  animation: float 6s ease-in-out infinite;
+}
+
+.badge:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.badge:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.badgeNumber {
+  font-family: "Funnel Display", sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  background: linear-gradient(135deg, #0dcfe4, #1873aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.badgeLabel {
+  font-family: "Lexend", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(233, 225, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .badges {
+    gap: 24px;
+  }
+  
+  .quoteMarkLeft,
+  .quoteMarkRight {
+    font-size: 32px;
+  }
+}

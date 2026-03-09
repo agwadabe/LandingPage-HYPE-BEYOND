@@ -6,6 +6,8 @@ import ProductExample from "./components/ProductExample";
 import UserRating from "./components/UserRating";
 import UserInputs from "./components/UserInputs";
 import Footer from "./components/Footer";
+import Styles from "./UserRating.module.css";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       <UserRating />
       <UserInputs />
       <Footer />
+      <Styles />
     </>
   );
 }
