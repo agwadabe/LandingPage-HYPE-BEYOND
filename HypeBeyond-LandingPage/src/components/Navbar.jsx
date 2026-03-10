@@ -1,5 +1,5 @@
 import React from "react";
-import logoDark from "../assets/Hype&Beyond Logo Horizontal Dark Mode.svg";
+import logoDark from "../assets/Hype-Beyond Logo Horizontal Dark Mode.svg";
 
 const Navbar = () => {
   return (

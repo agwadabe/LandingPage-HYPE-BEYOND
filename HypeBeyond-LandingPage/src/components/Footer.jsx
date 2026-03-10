@@ -1,5 +1,5 @@
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa"
-import logoDark from "../assets/Hype&Beyond Logo Horizontal Dark Mode.svg"
+import logoDark from "../assets/Hype-Beyond Logo Horizontal Dark Mode.svg"
 
 const Footer = () => {
   return (
