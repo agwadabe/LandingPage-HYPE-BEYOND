@@ -1,4 +1,3 @@
-// Claude-Muster
 
 import React from "react";
 
@@ -6,7 +5,6 @@ import styles from "./HeroSection.module.css";
 import logoDarkVertical from "../assets/Hype-Beyond Logo Dark Mode.svg";
 import CursorGlow from "./CursorGlow";
 
-// ── Sub-components ────────────────────────────────────────────────
 
 function Background() {
   return (
@@ -137,7 +135,6 @@ function HeroBottom() {
   );
 }
 
-// ── Main export ───────────────────────────────────────────────────
 
 export default function HeroSection() {
   return (
