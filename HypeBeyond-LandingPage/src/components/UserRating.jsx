@@ -3,7 +3,7 @@ import ScrollAnimation from "./ScrollAnimation.jsx"
 const UserRating = () => {
   return (
     <ScrollAnimation>
-    <section className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
+    <section id="UserRating" className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
       <h2 className="mb-10 text-3xl font-semibold">WAS UNSERE PARTNER SAGEN</h2>
 
       <div className="grid gap-6 md:grid-cols-3">

@@ -2,6 +2,32 @@ import React from "react";
 import logoDark from "../assets/Hype-Beyond Logo Horizontal Dark Mode.svg";
 
 const Navbar = () => {
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+
+    // Dropdown-Menü (Mobile) nach dem Klicken wieder schließen
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
+
+    if (targetId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const navLinks = [
+    { name: "Home", target: "home" },
+    { name: "Services", target: "ProductExample" },
+    { name: "Portfolio", target: "UserRating" },
+    { name: "Contact", target: "UserInputs" },
+  ];
+
   return (
     <div className="navbar fixed z-50 left-0 top-0 w-full bg-[#130d28] shadow-sm">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
@@ -28,44 +54,38 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Home</a>
-              </li>
-
-              <li>
-                <a>Services</a>
-              </li>
-
-              <li>
-                <a>Portfolio</a>
-              </li>
-
-              <li>
-                <a>Contact</a>
-              </li>
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a 
+                    href={`#${link.target}`} 
+                    onClick={(e) => handleScroll(e, link.target)}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
-          <a className="flex shrink-0 items-center">
+          <a 
+            href="#home" 
+            onClick={(e) => handleScroll(e, "home")} 
+            className="flex shrink-0 items-center cursor-pointer"
+          >
             <img src={logoDark} alt="Hype & Beyond Logo" className="block h-6 w-auto" />
           </a>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Home</a>
-            </li>
-
-            <li>
-              <a>Services</a>
-            </li>
-
-            <li>
-              <a>Portfolio</a>
-            </li>
-
-            <li>
-              <a>Contact</a>
-            </li>
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <a 
+                  href={`#${link.target}`} 
+                  onClick={(e) => handleScroll(e, link.target)}
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
